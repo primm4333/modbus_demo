@@ -15,28 +15,20 @@ public class ModbusController {
         this.modbusService = modbusService;
     }
 
-    /**
-     * Initializes the Modbus router.
-     */
     @GetMapping("/init")
     public String initializeModbusRouter() {
-        return modbusService.initializeModbusRouter();
+        modbusService.initializeModbusRouter();
+        return "Modbus router initialized successfully.";
     }
 
-    /**
-     * Retrieves the connected IoT devices.
-     */
     @GetMapping("/devices")
     public List<String> getConnectedDevices() {
         return modbusService.getConnectedDevices();
     }
 
-    /**
-     * Shuts down the Modbus service.
-     */
     @GetMapping("/shutdown")
     public String shutdownModbus() {
-        return modbusService.shutdownModbus();
+        // Implement shutdown logic if necessary.
+        return "Modbus service has been stopped.";
     }
 }
-

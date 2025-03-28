@@ -55,19 +55,26 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- ✅ Correct Modbus4J Dependency -->
+		<!-- ✅ Modbus4J from Infinite Automation -->
 		<dependency>
-			<groupId>com.serotonin</groupId>
+			<groupId>com.infiniteautomation</groupId>
 			<artifactId>modbus4j</artifactId>
-			<version>3.1.6</version>
+			<version>3.0.3</version>
 		</dependency>
 	</dependencies>
 
 	<repositories>
-		<!-- ✅ Correct Repository for Modbus4J -->
+		<!-- ✅ Infinite Automation Repository for Modbus4J -->
 		<repository>
-			<id>mango-automation</id>
-			<url>https://maven.scadacs.com/repository/public/</url>
+			<id>ias-releases</id>
+			<name>Infinite Automation Release Repository</name>
+			<url>https://maven.mangoautomation.net/repository/ias-release/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
 		</repository>
 	</repositories>
 
