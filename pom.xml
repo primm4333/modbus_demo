@@ -55,16 +55,16 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- ✅ Modbus4J from Infinite Automation -->
+		<!--  Modbus4J from Infinite Automation -->
 		<dependency>
 			<groupId>com.infiniteautomation</groupId>
 			<artifactId>modbus4j</artifactId>
-			<version>3.0.3</version>
+			<version>3.1.0</version>
 		</dependency>
 	</dependencies>
 
 	<repositories>
-		<!-- ✅ Infinite Automation Repository for Modbus4J -->
+		<!--  Infinite Automation Repository for Modbus4J -->
 		<repository>
 			<id>ias-releases</id>
 			<name>Infinite Automation Release Repository</name>

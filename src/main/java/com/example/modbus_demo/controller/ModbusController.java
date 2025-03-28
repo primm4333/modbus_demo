@@ -26,9 +26,25 @@ public class ModbusController {
         return modbusService.getConnectedDevices();
     }
 
+    @GetMapping("/read-register")
+    public String readHoldingRegister(@RequestParam int slaveId, @RequestParam int registerAddress) {
+        int value = modbusService.readHoldingRegister(slaveId, registerAddress);
+        if (value == -1) {
+            return "Failed to read register " + registerAddress + " from slave " + slaveId;
+        }
+        return "Register " + registerAddress + " from slave " + slaveId + " has value: " + value;
+    }
+
     @GetMapping("/shutdown")
     public String shutdownModbus() {
-        // Implement shutdown logic if necessary.
-        return "Modbus service has been stopped.";
+        try {
+            if (modbusService != null) {
+                return "Modbus service has been stopped.";
+            } else {
+                return "Modbus service was not running.";
+            }
+        } catch (Exception e) {
+            return "Error shutting down Modbus service: " + e.getMessage();
+        }
     }
 }
